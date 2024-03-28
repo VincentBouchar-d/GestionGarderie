@@ -2,11 +2,10 @@
 
 @section('content')
     <div>
-        <h1>{{ $garderie->nom }}</h1>
-        <p>{{ $garderie->adresse }}</p>
-        <p>{{ $garderie->ville }}</p>
-        <p>{{ $garderie->province }}</p>
-        <p>{{ $garderie->telephone }}</p>
+        <h1>{{ $garderie->Nom }}</h1>
+        <p>Adresse : {{ $garderie->Adresse }}</p>
+        <p>Ville : {{ $garderie->Ville }}</p>
+        <p>Province : {{ $garderie->Province }}</p>
         <br>
     </div>
 @endsection

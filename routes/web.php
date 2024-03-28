@@ -17,15 +17,15 @@ use App\Http\Controllers\GarderieController;
 
 Route::get('/', [GarderieController::class, 'index'])->name('welcome');
 
-Route::get('/garderie/{idGarderie}',[GarderieController::class, 'show'])->whereNumber('idGarderie')-> name('show');
+Route::get('/garderie/{id}',[GarderieController::class, 'show'])->whereNumber('id')-> name('show');
 
 Route::get('/garderie/create', [GarderieController::class, 'create'])->name('garderies.create');
 
 Route::post('/garderie/create', [GarderieController::class, 'store'])->name('garderies.store');
 
-Route::get('/garderie/{idGarderie}/modifier', [GarderieController::class, 'formModifier'])->whereNumber('idGarderie')->name('garderies.modifier');
+Route::get('/garderie/{id}/modifier', [GarderieController::class, 'formModifier'])->whereNumber('id')->name('garderies.modifier');
 
-Route::put('/garderie/{idGarderie}/update', [GarderieController::class, 'update'])->whereNumber('idGarderie')->name('garderies.update');
+Route::put('/garderie/{id}/update', [GarderieController::class, 'update'])->whereNumber('id')->name('garderies.update');
 
-Route::delete('/garderie/{idGarderie}/supprimer', [GarderieController::class, 'supprimer'])->whereNumber('idGarderie')->name('garderies.supprimer');
+Route::delete('/garderie/{id}/supprimer', [GarderieController::class, 'supprimer'])->whereNumber('id')->name('garderies.supprimer');
 

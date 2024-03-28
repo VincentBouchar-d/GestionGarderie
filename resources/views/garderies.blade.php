@@ -7,14 +7,14 @@
 
             @foreach($garderies as $garderie)
                 <div class='item'>
-                    <h2><a href="{{ route('show', ['idGarderie' => $garderie -> idGarderie])}}">{{ $garderie->Nom}}</a></h2>
+                    <h2><a href="{{ route('show', ['id' => $garderie -> id])}}">{{ $garderie->Nom}}</a></h2>
                     <form method='put'>
-                        <button onclick="this.form.action='{{ route('garderies.modifier',['idGarderie' => $garderie -> idGarderie])}}'">Modifier</button>
+                        <button onclick="this.form.action='{{ route('garderies.modifier',['id' => $garderie -> id])}}'">Modifier</button>
                     </form>
                     <form method='POST'>
                         @csrf
                         @method('DELETE')
-                        <button onclick='if(confirm("Voulez-vous vraiment supprimer la garderie ?"))this.form.action="{{ route("garderies.supprimer",["idGarderie" => $garderie -> idGarderie])}}"'>Supprimer</button>
+                        <button onclick='if(confirm("Voulez-vous vraiment supprimer la garderie ?"))this.form.action="{{ route("garderies.supprimer",["id" => $garderie -> id])}}"'>Supprimer</button>
                     </form>
                 </div>
 

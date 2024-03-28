@@ -42,34 +42,32 @@ use App\Models\Garderie;
                 'adresse' => $request->adresse,
                 'ville' => $request->ville,
                 'province' => $request->province,
-                'telephone' => $request->telephone
             ]);
             return redirect()->route('welcome');
         }
 
-        public function FormModifier($idGarderie)
+        public function FormModifier($id)
         {
-            $garderie = Garderie::findOrFail($idGarderie);
+            $garderie = Garderie::findOrFail($id);
             return view('formModifier')->with('garderie',$garderie);
         }
 
-        public function update(Request $request, $idGarderie)
+        public function update(Request $request, $id)
         {
-            $garderie = Garderie::findOrFail($idGarderie);
+            $garderie = Garderie::findOrFail($id);
             $garderie->update([
                 'nom' => $request->nom,
                 'adresse' => $request->adresse,
                 'ville' => $request->ville,
                 'province' => $request->province,
-                'telephone' => $request->telephone
             ]); 
         
             return redirect()->route('welcome');
         }
 
-        public function supprimer($idGarderie)
+        public function supprimer($id)
         {
-                $garderie = Garderie::findOrFail($idGarderie);
+                $garderie = Garderie::findOrFail($id);
                 $garderie->delete();
                 return redirect()->route('welcome');            
         }
